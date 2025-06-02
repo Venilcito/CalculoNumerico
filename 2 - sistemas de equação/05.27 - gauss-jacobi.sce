@@ -89,7 +89,7 @@ printf("\n Vetor solução aproximada:\n")
 mprintf(" x(%d) = %.6f\n", [(1:n)', X])
 
 printf("\n Verificação dos resultados (A*X ≈ B):\n")
-for i = i:n
+for i = 1:n
     s = 0
     for j = 1:n
         s = s + A(i,j) * X(j)
