@@ -2,10 +2,10 @@ clear(); clc()
 
 printf("*** MÉTODO DIRETO: THOMAS (TDMA) - SISTEMAS TRIDIAGONAIS ***\n");
 
-a = [0; -1; -1]
-b = [2;  2;  2]
-c = [-1; -1; 0]
-d = [1;  1;  1]
+a = [0; -5; -5; -5]
+b = [20; 15; 15; 19]
+c = [-5; -5; -5; 0]
+d = [1100; 100; 100; 100]
 
 a_original = a
 b_original = b
@@ -26,7 +26,7 @@ c(1) = c(1) / b(1)
 d(1) = d(1) / b(1)
 
 for i = 2:n-1
-    temp = b(1) - a(i) * c(i-1)
+    temp = b(i) - a(i) * c(i-1)
     if temp == 0 then
         error("Pivô nulo encontrado na linha " + string(i) + ". Método falha.")
     end
