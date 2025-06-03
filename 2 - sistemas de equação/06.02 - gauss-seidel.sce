@@ -2,10 +2,11 @@ clear(); clc()
 
 printf("*** MÉTODO ITERATIVO: GAUSS-SEIDEL (REORDENAÇÃO GULOSA) ***\n")
 
-A = [10.0, 1.0, 1.0;
-     1.0, 5.0, 9.0;
-     2.0, 8.0, -4.0]
-B = [12.0; 15.0; 6.0]
+A = [0.1, 0.2, 1.0, 0.3;
+     0.3, 2.0, -0.3, -0.9;
+     4.0, 2.0, -0.3, 0.8;
+     0.6, 3.2, -1.8, 0.4]
+B = [4.0; 7.5; 4.4; 10.0]
 
 n = size(A,1)
 Nmax = 100
@@ -68,17 +69,14 @@ end
 
 for k = 1:Nmax
     for i = 1:n
-        S = 0
-        for j = 1:n
-            if j <> i then
-                if j < i then
-                    S = S + A(i,j) * X(j)
-                else
-                    S = S + A(i,j) * X0(j)
-                end
-            end
+        S1 = 0; S2 = 0;
+        for j = 1:i-1
+            S1 = S1 + A(i,j) * X(j)
         end
-        X(i) = (B(i) - S) / A(i,i)
+        for j = i+1:n
+            S2 = S2 + A(i,j) * X0(j)
+        end
+        X(i) = (B(i) - S1 - S2) / A(i,i)
     end
     erro = max(abs(X - X0))
     if erro < epsilon then
