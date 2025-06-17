@@ -15,9 +15,9 @@ printf("\n[1] TABELA DE DADOS:\n")
 for i = 1:n
     printf("   x = %.6f; f(x) = %.6f\n", X(i), Y(i))
 end
-[PolLagrange, CoefLagrange] = lagrange_poly(X, Y)
 
 printf("\n[2] POLINÔMIOS DE BASE DE LAGRANGE:\n")
+[PolLagrange, CoefLagrange] = lagrange_poly(X, Y)
 for i = 1:n
     pol_str = pol2str(CoefLagrange(i))
     printf("   L_%d(x) = %s\n", i-1, pol_str)
