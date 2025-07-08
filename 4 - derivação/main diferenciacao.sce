@@ -22,7 +22,7 @@ derivada_3a_exata = 36.945270
 derivada_4a_exata = 44.334337
 
 printf("\n>> Progressiva de 1a Ordem:")
-Progressiva_1a_Ordem(X, Y, k, derivada_1a_exata, derivada_2a_exata)
+Progressiva_1a_Ordem(X, Y, derivada_1a_exata, derivada_2a_exata)
 
 printf("\n>> Regressiva de 1a Ordem:")
 Regressiva_1a_Ordem(X, Y, k, derivada_1a_exata, derivada_2a_exata)
