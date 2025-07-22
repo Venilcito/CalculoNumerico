@@ -17,7 +17,7 @@ function dy = f(x,y)
     dy = x - 2*y
 endfunction
 
-a = 0.0; b = 1.0
+a = 0.0; b = 0.5
 x0 = a; y0 = 1.0
 h = 0.1
 n = int((b - a) / h)
@@ -28,10 +28,10 @@ printf("\n")
 printf("===========================================================\n")
 printf("    MÉTODO DE EULER MODIFICADO - APROXIMAÇÕES NUMÉRICAS\n")
 printf("===========================================================\n")
-printf("         i         x(i)         y(i)\n")
+printf("            i              x(i)              y(i)\n")
 printf("-----------------------------------------------------------\n")
 for i = 1:(n+1)
-    mprintf("  %3d     %9.4f     %9.6f\n", i-1, x(i), y(i))
+    mprintf("          %3d          %9.4f          %9.6f\n", i-1, x(i), y(i))
 end
 printf("-----------------------------------------------------------\n")
 printf("  Aproximação final: y(%.1f) ≈ %.6f\n", x($), y($))

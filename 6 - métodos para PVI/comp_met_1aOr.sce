@@ -51,7 +51,7 @@ mprintf("Solução Exata         %9.6f\n", yex($))
 printf("\n=======================================================\n\n")
 
 clf()
-plot(x1, y1, 'r-o', x2, y2, 'q-x', x3, y3, 'm-+', x4, y4, 'c-s', x5, y5, 'b-*', x1, yex, 'k--')
+plot(x1, y1, 'r-o', x2, y2, 'g-x', x3, y3, 'm-+', x4, y4, 'c-s', x5, y5, 'b-*', x1, yex, 'k--')
 xgrid(1)
 xtitle("Comparação de Métodos para o PVI: [MIOTTINI]", "x", "Solução y(x)")
 legend(["Euler 1a Ordem", "Euler Modificado", "Taylor 2a Ordem", "Runge-Kutta 3a Ordem", "Runge-Kutta 4a Ordem", "Solução Exata"], "in_upper_left")
