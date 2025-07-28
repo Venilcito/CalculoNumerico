@@ -7,27 +7,35 @@ exec("4-RK3_3aOr.sce", -1)
 exec("5-RK4_4aOr.sce", -1)
 exec("6-plotar_resultados.sce", -1)
 
-// exercicio de teste
-a = 0.0; b = 0.5
-x0 = a; y0 = 1.0
+// PROBLEMA 1 DO TRABALHO!!!!!!
+//a = 0.0; b = 1.0
+//x0 = a; y0 = 50
+//k = 1.5; Tmax = 200
+//h = 0.1
 
-h = 0.1 // mudar conforme problemas
+// PROBLEMA 2 DO TRABALHO!!!!!!
+a = 0.0; b = 5.0
+x0 = a; y0 = 20
+h = 0.2
+
 n = int((b - a) / h)
 
-//dy = x - 2*y
-//d2y = 1 - 2*x + 4*y
-//yex = x/2 - 1/4 + 5/4*exp(-2*x)
-
 function dy = f(x,y)
-    dy = x - 2*y
+    //dy = x - 2*y
+    //dy = k*(Tmax - y)                    // PROBLEMA 1
+    dy = (50 - y) / 10                   // PROBLEMA 2
 endfunction
 
 function d2y = df(x,y)
-    d2y = 1 - 2*x + 4*y
+    //d2y = 1 - 2*x + 4*y
+    //d2y = -k^2*(Tmax - y)                // PROBLEMA 1
+    d2y = -(1/10) * ((50-y)/10)          // PROBLEMA 2
 endfunction
 
 function yex = y_exata(x)
-    yex = x/2 - 1/4 + 5/4*exp(-2*x)
+    //yex = x/2 - 1/4 + 5/4*exp(-2*x)
+    //yex = Tmax - (Tmax - y0)*exp(-k*x)   // PROBLEMA 1
+    yex = 50 - 30*exp(-x/10)             // PROBLEMA 2
 endfunction
 
 [x1, y1] = euler_1a_ordem(f, x0, y0, h, n)
@@ -39,15 +47,15 @@ endfunction
 yex = y_exata(x1)
 
 printf("\n================ ERROS FINAIS EM y(x0) ================\n")
-mprintf("Metodo                  y(x0)         Erro relativo (%%)\n")
+mprintf("Metodo                   y(x0)        Erro relativo (%%)\n")
 mprintf("-------------------------------------------------------\n")
-mprintf("Euler 1a Ordem        %9.6f        %10.6f\n", y1($), 100 * abs((y1($) - yex($)) / yex($)))
-mprintf("Euler Modificado      %9.6f        %10.6f\n", y2($), 100 * abs((y2($) - yex($)) / yex($)))
-mprintf("Taylor 2a Ordem       %9.6f        %10.6f\n", y3($), 100 * abs((y3($) - yex($)) / yex($)))
-mprintf("Runge-Kutta 3a Ordem  %9.6f        %10.6f\n", y4($), 100 * abs((y4($) - yex($)) / yex($)))
-mprintf("Runge_Kutta 4a Ordem  %9.6f        %10.6f\n", y5($), 100 * abs((y5($) - yex($)) / yex($)))
+mprintf("Euler 1a Ordem          %9.6f     %10.6f\n", y1($), 100 * abs((y1($) - yex($)) / yex($)))
+mprintf("Euler Modificado        %9.6f     %10.6f\n", y2($), 100 * abs((y2($) - yex($)) / yex($)))
+mprintf("Taylor 2a Ordem         %9.6f     %10.6f\n", y3($), 100 * abs((y3($) - yex($)) / yex($)))
+mprintf("Runge-Kutta 3a Ordem    %9.6f     %10.6f\n", y4($), 100 * abs((y4($) - yex($)) / yex($)))
+mprintf("Runge_Kutta 4a Ordem    %9.6f     %10.6f\n", y5($), 100 * abs((y5($) - yex($)) / yex($)))
 mprintf("-------------------------------------------------------\n")
-mprintf("Solução Exata         %9.6f", yex($))
+mprintf("Solução Exata           %9.6f", yex($))
 printf("\n=======================================================\n\n")
 
 clf()
@@ -56,3 +64,5 @@ xgrid(1)
 xtitle("Comparação de Métodos para o PVI: [MIOTTINI]", "x", "Solução y(x)")
 legend(["Euler 1a Ordem", "Euler Modificado", "Taylor 2a Ordem", "Runge-Kutta 3a Ordem", "Runge-Kutta 4a Ordem", "Solução Exata"], "in_upper_left")
 
+// Um oferecimento Castamann Códigos™
+// Ao usar este código, o usuário concorda com os termos e condições e pode ceder nota de trabalhos e provas para o Vinicius Castamann

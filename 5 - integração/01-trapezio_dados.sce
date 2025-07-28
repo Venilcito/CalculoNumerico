@@ -6,7 +6,7 @@ function Trapezio_Dados(X, Y, integral_exata)
     printf("   Fórmula: I ~ (h/2) * [f(x0) + 2*Σ f(xk) + f(xn)]\n")
     
     somatorio = sum(Y(2:num_pontos-1))
-    integral_numerica = (h/2) * Y(1) + 2*somatorio + Y(num_pontos)
+    integral_numerica = (h/2) * (Y(1) + 2*somatorio + Y(num_pontos))
     printf("   h = %f\n", h)
     printf("   Integral aproximada: %f\n", integral_numerica)
 
