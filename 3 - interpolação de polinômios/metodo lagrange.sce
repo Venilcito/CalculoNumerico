@@ -6,8 +6,27 @@ exec("03-lagrange_poly.sce", -1)
 exec("-avaliar_polinomio.sce", -1)
 exec("-plotar_interpolador.sce", -1)
 
-X = [0,1,2,3]
-Y = [1,6,5,-8]
+// PROBLEMA 1 INTEGRAIS!!!!!
+//X = [0,1,2,3,4,5,6]
+//Y = [5.04,5.93,12.08,26.01,44.91,70.21,100.87]
+
+// PROBLEMA 2 INTEGRAIS!!!!!
+//X = [0,1,2,3,4,5,6]
+//Y = [0.01,0.69,1.09,1.40,1.60,1.79,1.95]
+
+// PROBLEMA 3 INTEGRAIS!!!!!
+//X = [0,0.1667,0.3333,0.5,0.6667,0.8333,1]
+//Y = [0,0.515,0.866,1,0.866,0.515,0.01]
+
+// PROBLEMA 4 INTEGRAIS!!!!!
+//X = [0,1,2,3,4,5,6]
+//Y = [1,0.49,0.2,0.099,0.06,0.038,0.027]
+
+// PROBLEMA 5 INTEGRAIS!!!!!
+// polinômio não consegue inferir função, propor solução usando mais pontos
+//X = [0,1,2,3,4,5,6]
+//Y = [1,0.44,-0.23,-0.47,-0.24,0.13,0.27]
+
 n = length(X)
 grau_polinomio = n-1
 
@@ -36,3 +55,6 @@ printf("\n[5] ERRO PERCENTUAL: %.3f%%\n", erro_percentual)
 plotar_interpolador(X, Y, PolLagrange)
 
 printf("\n******** FIM DE INTERPOLAÇÃO POR LAGRANGE ********\n")
+
+// Um oferecimento Castamann Códigos™
+// Ao usar este código, o usuário concorda com os termos e condições e pode ceder nota de trabalhos e provas para o Vinicius Castamann

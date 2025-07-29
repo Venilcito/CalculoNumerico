@@ -31,6 +31,21 @@ exec("04-trapezio_funcao.sce", -1)
 //deff('y=f(x)', 'y = sin(%pi*x)')
 //x0 = 0.0; xn = 1.0; n = 1000
 
+// PROBLEMA 4 DO TRABALHO!!!!!
+//X = [0,1,2,3,4,5,6]
+//Y = [1,0.49,0.2,0.099,0.06,0.038,0.027]
+//integral_exata = 1.405647
+//deff('y=f(x)', 'y = 1/(1 + x^2)')
+//x0 = 0.0; xn = 6.0; n = 1000
+
+// PROBLEMA 5 DO TRABALHO!!!!!
+// não tem solução analitica, erros relativos 300%, só o último método da certo
+//X = [0,1,2,3,4,5,6]
+//Y = [1,0.44,-0.23,-0.47,-0.24,0.13,0.27]
+//integral_exata = 0.0557713
+//deff('y=f(x)', 'y = exp(-0.2*x)*cos(x)')
+//x0 = 0.0; xn = 6.0; n = 1000
+
 printf("\n>> Método do Trapézio Generalizado (dados tabulados):")
 Trapezio_Dados(X, Y, integral_exata)
 
